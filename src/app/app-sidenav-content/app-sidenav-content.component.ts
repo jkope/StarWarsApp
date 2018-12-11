@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'jrk-app-sidenav-content',
+  selector: 'app-sidenav-content',
   templateUrl: './app-sidenav-content.component.html',
   styleUrls: ['./app-sidenav-content.component.sass']
 })

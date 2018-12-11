@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatFormFieldModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatFormFieldModule, MatListModule,
+    MatInputModule, MatButtonModule} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +24,9 @@ import { AppSidenavContentComponent } from './app-sidenav-content/app-sidenav-co
         MatIconModule,
         MatSidenavModule,
         MatFormFieldModule,
-        MatListModule
+        MatListModule,
+        MatInputModule,
+        MatButtonModule
     ],
     providers: [],
     bootstrap: [AppComponent]
