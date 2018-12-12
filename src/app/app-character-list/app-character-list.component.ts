@@ -9,11 +9,12 @@ import { Character } from '../models/character';
 })
 export class AppCharacterListComponent implements OnInit {
 
+  characterFilter: string = '';
   hideDetails = true;
   characters: Array<Character> =  [
     {
-      'id': 'luke-skywalker',
-      'name': 'Luke Skywalker',
+    'id': 'luke-skywalker',
+    'name': 'Luke Skywalker',
     'height': 172,
     'mass': 77,
     'hair_color': 'blond',

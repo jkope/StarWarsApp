@@ -1,25 +1,30 @@
 <div class="my-content">
-  <mat-toolbar>
-    <mat-form-field class="search-filter">
-      <input matInput placeholder="Filter Characters...">
-    </mat-form-field>
-  </mat-toolbar>
+  <div class="filtBtn">
+    <mat-toolbar class="filt">
+      <mat-form-field class="search-filter">
+        <input matInput [(ngModel)]="characterFilter" placeholder="Filter Characters...">
+      </mat-form-field>
+    </mat-toolbar>
 
-  <mat-list-item>
-    <button color="accent" mat-raised-button (click)="toggleDetails()">
-      <span *ngIf="hideDetails">Show Details</span>
-      <span *ngIf="!hideDetails">Hide Details</span>
-    </button>
-  </mat-list-item>
-
-  <mat-list>
-    <mat-list-item *ngFor="let character of characters">
-      <img mat-list-avatar src="{{ character.avatar }}"/>
-      <h3 mat-line>{{ character.name }}</h3>
-      <div mat-line *ngIf="!hideDetails" class="details">
-        <span class="bump">{{ character.gender }}</span>
-        <span>{{ character.birth_year }}</span>
-      </div>
+    <mat-list-item>
+      <button color="accent" mat-raised-button (click)="toggleDetails()" class="btn">
+        {{ hideDetails ? 'Show' : 'Hide' }} Details
+      </button>
     </mat-list-item>
-  </mat-list>
+ 
+  </div>
+
+
+  <div>
+    <mat-list>
+      <mat-list-item *ngFor="let character of characters | character : characterFilter">
+        <img mat-list-avatar [src]="character.avatar" [alt]="character.name | lowercase"/>
+        <h3 mat-line>{{ character.name | uppercase }}</h3>
+        <div mat-line *ngIf="!hideDetails" class="details">
+          <span class="bump">{{ character.gender }}</span>
+          <span>{{ character.birth_year }}</span>
+        </div>
+      </mat-list-item> 
+    </mat-list>
+  </div>
 </div>
