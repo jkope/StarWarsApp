@@ -23,6 +23,7 @@
         <div mat-line *ngIf="!hideDetails" class="details">
           <span class="bump">{{ character.gender }}</span>
           <span>{{ character.birth_year }}</span>
+          <force-component (onForceChange)="updateForce(character, $event)" [forceStrength]="character.force"></force-component>
         </div>
       </mat-list-item> 
     </mat-list>

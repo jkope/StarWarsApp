@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, DoCheck, AfterContentInit,
+  AfterViewChecked, AfterContentChecked, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav-content',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppSidenavContentComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('constructor');
+  }
 
   ngOnInit() {
   }
